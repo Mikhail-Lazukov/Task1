@@ -8,6 +8,8 @@ namespace Task1
 {
     class Program
     {
+
+        // Вывод значения матрицы на экран
         static void DisplayMatrix(int[,] matrix, int n, int m, int len = 0)
         {
             for (int i = 0; i < n; i++)
@@ -28,6 +30,7 @@ namespace Task1
             }
         }
 
+        // Поиск суммы всех четных и всех не четный чисел
         static (int even, int odd) SumEvenAndOdd(int[,] matrix)
         {
             int sumEven = 0;
