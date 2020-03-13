@@ -28,6 +28,24 @@ namespace Task1
             }
         }
 
+        static (int even, int odd) SumEvenAndOdd(int[,] matrix)
+        {
+            int sumEven = 0;
+            int sumOdd = 0;
+            foreach ( var num in matrix)
+            {
+                if (num % 2 == 0)
+                {
+                    sumEven += num;
+                }
+                else
+                {
+                    sumOdd += num;
+                }
+            }          
+            return (sumEven, sumOdd);
+        }
+
         static void Main(string[] args)
         {
             try
@@ -56,18 +74,19 @@ namespace Task1
                 }
 
                 Console.WriteLine("Сгенерированная матрица:");
-
                 DisplayMatrix(matrix, n, m, len);
 
-                Console.ReadLine();
+                var evenAndOdd = SumEvenAndOdd(matrix);
+                Console.WriteLine("Сумма всех четных чисел : {0} \n" +
+                    "Сумма всех нечетных чисел : {1}" , evenAndOdd.even, evenAndOdd.odd);
+
             }
-            catch (Exception e)
+            catch
             {
                 Console.WriteLine("Проверьте правильность введенных данных");
             }
 
+            Console.ReadLine();
         }
-
-        
     }
 }
